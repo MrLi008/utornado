@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocketDemo</title>
+</head>
+<body>
+<h1>websocket 演示demo</h1>
+<input type="text" name="message">
+<button onclick="sendmessage()">发送消息</button>
+</body>
+<script>
+    function sendmessage() {
+        let conn = new WebSocket('ws:{{ const['domain'] }}/demowebsockethandle');
+        conn.onopen = e => {
+            console.log('链接成功');
+            conn.send(document.getElementsByName('message')[0].value);
+        }
+        conn.onerror = e => {
+            console.log('error: ')
+        }
+        conn.onmessage = e => {
+            alert(e.data);
+        }
+        conn.onclose = e => {
+            console.log(e);
+        }
+    }
+</script>
+</html>

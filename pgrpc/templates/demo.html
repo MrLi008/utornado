@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+{{ msg }}
+
+<div>
+    <h1>Demo Form</h1>
+    <form action="" method="post">
+        {% for item in formdict %}
+
+        <label for="{{ item['name'] }}">
+            {{ item['label'] }}
+            <input type="{{ item['inputtype'] }}" name="{{ item['name'] }}">
+        </label>
+        {% end %}
+        <button type="submit">提交</button>
+    </form>
+</div>
+</body>
+</html>

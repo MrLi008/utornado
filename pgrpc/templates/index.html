@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NLPDemo 接口
+    </title>
+</head>
+<body>
+<p>继承并实现 requesthandle类中的webhttp/websocket</p>
+<p>在handle pkg 中__init__.py __all__ 为自动加载包名</p>
+<p>工具类建议由requesthandle 类加载并实例化.数据库同理.</p>
+<h1>接口使用方法:</h1>
+{% for url, name, tip in urls %}
+<h2>url: <a href="{{ url }}">/{{ name }}</a></h2>
+<h4>tip: {{ tip }}</h4>
+{% end %}
+
+</body>
+</html>
